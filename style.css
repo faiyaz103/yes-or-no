@@ -1,0 +1,299 @@
+:root {
+    --pink: #ff4f81;
+    --dark-pink: #e83e70;
+    --light-pink: #ffd6e3;
+    --lighter-pink: #fff0f5;
+    --off-white: #fffaf7;
+    --text: #4a2c35;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--lighter-pink),
+            var(--off-white)
+        );
+
+    color: var(--text);
+
+    overflow: hidden;
+}
+
+.page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.card {
+    width: min(90vw, 550px);
+
+    min-height: 400px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    border-radius: 30px;
+
+    padding: 50px 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(255, 79, 129, 0.15);
+
+    border: 2px solid var(--light-pink);
+}
+
+.heart {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+h1 {
+    font-size: 32px;
+
+    color: var(--dark-pink);
+
+    margin-bottom: 20px;
+}
+
+.question {
+    font-size: 23px;
+
+    font-weight: 500;
+
+    margin-bottom: 35px;
+}
+
+.button-area {
+    position: relative;
+
+    width: 100%;
+
+    height: 120px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.btn {
+    border: none;
+
+    padding: 14px 28px;
+
+    border-radius: 14px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.yes-button {
+    background: var(--pink);
+    color: var(--white);
+
+    position: absolute;
+    left: calc(50% - 100px);
+
+    z-index: 2;
+
+    box-shadow:
+        0 8px 20px rgba(255, 79, 129, 0.25);
+}
+
+.yes-button:hover {
+    background: var(--dark-pink);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(255, 79, 129, 0.3);
+}
+
+.no-button {
+    background: var(--light-pink);
+    color: var(--dark-pink);
+
+    position: absolute;
+
+    left: calc(50% + 20px);
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    transition:
+        left 0.25s ease,
+        top 0.25s ease,
+        transform 0.2s ease;
+}
+
+.no-button {
+    background: var(--light-pink);
+
+    color: var(--dark-pink);
+
+    position: absolute;
+
+    transition:
+        left 0.25s ease,
+        top 0.25s ease,
+        transform 0.2s ease;
+}
+
+.button-area {
+    position: relative;
+
+    width: 100%;
+    height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-button:hover {
+    transform: scale(1.05);
+}
+
+.date-details {
+    margin-top: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+}
+
+.date-details strong {
+    color: var(--dark-pink);
+}
+
+.success-message {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    animation: fadeIn 0.6s ease;
+}
+
+.success-heart {
+    font-size: 60px;
+
+    margin-bottom: 5px;
+}
+
+.success-message h2 {
+    color: var(--dark-pink);
+
+    font-size: 32px;
+}
+
+.success-message p {
+    font-size: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .card {
+        padding: 40px 20px;
+
+        min-height: 420px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .question {
+        font-size: 20px;
+    }
+
+    .btn {
+        padding: 12px 22px;
+
+        font-size: 16px;
+    }
+
+    .button-area {
+        height: 140px;
+    }
+}
